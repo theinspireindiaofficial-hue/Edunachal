@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Edunachal — Premium Futuristic EdTech Design System
+   All colors are HSL. Tokens live here.
+*/
+
+@layer base {
+  :root {
+    /* Base surfaces — deep navy / cosmic */
+    --background: 226 50% 8%;            /* #0B1020 */
+    --foreground: 0 0% 100%;
+    --surface: 222 35% 12%;              /* #111827 */
+    --surface-2: 224 30% 16%;
+    --muted: 222 25% 20%;
+    --muted-foreground: 215 20% 65%;     /* #94A3B8 */
+    --subtle-foreground: 214 32% 80%;    /* #CBD5E1 */
+
+    --card: 222 35% 12%;
+    --card-foreground: 0 0% 100%;
+    --popover: 222 35% 12%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Brand */
+    --primary: 262 83% 58%;              /* #7C3AED electric purple */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 262 90% 70%;
+
+    --secondary: 189 94% 43%;            /* #06B6D4 cyan */
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 38 92% 50%;                /* #F59E0B gold */
+    --accent-foreground: 226 50% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 100%;                 /* used with /10 opacity */
+    --input: 0 0% 100%;
+    --ring: 262 83% 58%;
+
+    --radius: 1rem;
+
+    /* Gradients */
+    --gradient-hero: radial-gradient(ellipse at 20% 0%, hsl(262 83% 58% / 0.35), transparent 60%),
+                     radial-gradient(ellipse at 80% 20%, hsl(189 94% 43% / 0.25), transparent 55%),
+                     radial-gradient(ellipse at 50% 90%, hsl(230 80% 30% / 0.4), transparent 60%);
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(189 94% 43%));
+    --gradient-violet: linear-gradient(135deg, hsl(230 80% 30%), hsl(262 83% 58%));
+    --gradient-text: linear-gradient(135deg, hsl(0 0% 100%), hsl(214 32% 80%));
+    --gradient-accent: linear-gradient(135deg, hsl(262 83% 58%), hsl(189 94% 43%) 60%, hsl(38 92% 60%));
+
+    /* Shadows */
+    --shadow-glow: 0 0 60px hsl(262 83% 58% / 0.45);
+    --shadow-soft: 0 20px 60px -20px hsl(226 70% 4% / 0.6);
+    --shadow-card: 0 8px 30px -12px hsl(226 70% 4% / 0.5);
+
+    --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Lock dark theme — premium look */
+  .dark {
+    --background: 226 50% 8%;
+    --foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * { @apply border-border/10; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+    background-color: hsl(var(--background));
+    background-image:
+      radial-gradient(1200px 600px at 10% -10%, hsl(262 83% 58% / 0.18), transparent 60%),
+      radial-gradient(1000px 500px at 100% 10%, hsl(189 94% 43% / 0.12), transparent 60%);
+    background-attachment: fixed;
+  }
+  ::selection { background: hsl(var(--primary) / 0.4); color: white; }
+}
+
+@layer components {
+  .glass {
+    background: hsl(0 0% 100% / 0.04);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid hsl(0 0% 100% / 0.08);
+  }
+  .glass-strong {
+    background: hsl(0 0% 100% / 0.07);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid hsl(0 0% 100% / 0.12);
+  }
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-brand {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .btn-glow {
+    position: relative;
+    background: var(--gradient-primary);
+    box-shadow: 0 10px 40px -10px hsl(262 83% 58% / 0.6);
+    transition: transform 0.3s var(--transition-smooth), box-shadow 0.3s var(--transition-smooth);
+  }
+  .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 18px 60px -10px hsl(262 83% 58% / 0.75); }
+  .ring-grad {
+    position: relative;
+  }
+  .ring-grad::before {
+    content: '';
+    position: absolute; inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, hsl(262 83% 58% / 0.6), hsl(189 94% 43% / 0.3), transparent 70%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+  }
+  .noise::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    opacity: 0.04; pointer-events: none; mix-blend-mode: overlay;
+  }
+  .marquee { animation: marquee 35s linear infinite; }
+}
+
+@layer utilities {
+  .font-display { font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; letter-spacing: -0.02em; }
+  .bg-grid {
+    background-image:
+      linear-gradient(hsl(0 0% 100% / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(0 0% 100% / 0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 80%);
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-20px) translateX(10px); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+.animate-float-slow { animation: float-slow 9s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }

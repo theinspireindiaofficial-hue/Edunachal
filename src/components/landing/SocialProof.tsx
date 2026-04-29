@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 const stats = [
-  { value: 10000, suffix: "+", label: "Active learners" },
-  { value: 500, suffix: "+", label: "Final selections" },
+  { value: 1000000, suffix: "+", label: "Active learners" },
+  { value: 50000, suffix: "+", label: "Selections guided" },
   { value: 4.9, suffix: "/5", label: "Student rating", decimals: 1 },
-  { value: 100, suffix: "+", label: "Expert mentors" },
+  { value: 126, suffix: "+", label: "Expert mentors" },
 ];
 
 const logos = ["UPSC", "APSC", "SSC CGL", "IBPS PO", "NEET UG", "JEE Adv", "RRB NTPC", "RBI Grade B", "CDS", "CAPF"];
@@ -43,11 +43,13 @@ const SocialProof = () => {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.4 });
   return (
-    <section ref={ref} className="relative py-14 border-y border-white/5">
+    <section ref={ref} className="relative py-16 border-y border-white/5 bg-white/[0.015]">
       <div className="container">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {stats.map((s) => (
-            <Counter key={s.label} s={s} start={inView} />
+            <div key={s.label} className="rounded-3xl glass px-4 py-6">
+              <Counter s={s} start={inView} />
+            </div>
           ))}
         </div>
 

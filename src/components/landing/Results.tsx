@@ -4,7 +4,7 @@ import { SectionHead } from "./CoursesSection";
 
 const stories = [
   { name: "Ananya Sharma", exam: "UPSC CSE 2024", rank: "AIR 87", quote: "The structured weekly plans + analytics turned my chaotic prep into a system. I always knew what to do next." },
-  { name: "Rohit Verma", exam: "IIT-JEE Adv", rank: "AIR 412", quote: "Problem-first learning made physics click. The mentors don&apos;t just teach — they coach." },
+  { name: "Rohit Verma", exam: "IIT-JEE Adv", rank: "AIR 412", quote: "Problem-first learning made physics click. The mentors don't just teach, they coach." },
   { name: "Pooja Nair", exam: "SBI PO", rank: "Selected", quote: "Daily mocks and personalised feedback closed every gap. Cleared on first attempt." },
   { name: "Tenzin Dorjee", exam: "APSC", rank: "Top 50", quote: "Regional focus + national-grade mentorship is a rare combo. Edunachal nailed it." },
   { name: "Sara Khan", exam: "NEET UG", rank: "AIR 1,204", quote: "Weak topic detection saved months. I revised what mattered, not what was easy." },
@@ -29,11 +29,11 @@ const Results = () => (
             viewport={{ once: true }}
             transition={{ duration: 0.55, delay: (i % 3) * 0.06 }}
             whileHover={{ y: -6 }}
-            className="group relative glass-strong ring-grad rounded-3xl p-6 overflow-hidden"
+            className="group relative premium-panel ring-grad rounded-3xl p-6 overflow-hidden"
           >
-            <div aria-hidden className="absolute -top-16 -right-16 w-40 h-40 rounded-full bg-secondary/20 blur-3xl opacity-0 group-hover:opacity-100 transition" />
+            <div aria-hidden className="absolute -top-16 -right-16 w-40 h-40 rounded-full bg-secondary/12 blur-2xl opacity-0 group-hover:opacity-100 transition" />
             <Quote className="w-7 h-7 text-primary/70" />
-            <p className="mt-3 text-base text-foreground/90 leading-relaxed" dangerouslySetInnerHTML={{ __html: s.quote.replace("&apos;", "'") }} />
+            <p className="mt-3 text-base text-foreground/90 leading-relaxed">{s.quote}</p>
             <div className="mt-6 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-11 h-11 rounded-full bg-gradient-primary grid place-items-center font-display font-bold">

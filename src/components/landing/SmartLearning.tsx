@@ -4,7 +4,7 @@ import { SectionHead } from "./CoursesSection";
 
 const features = [
   { icon: Compass, title: "Personalized roadmap", desc: "Your goal, time, and gaps — translated into a daily plan." },
-  { icon: Brain, title: "Weak topic detection", desc: "We surface what&apos;s holding back your rank. You fix it." },
+  { icon: Brain, title: "Weak topic detection", desc: "We surface what's holding back your rank. You fix it." },
   { icon: Activity, title: "Daily performance insights", desc: "Effort, accuracy, speed — measured the right way." },
   { icon: RefreshCcw, title: "Smart revision planner", desc: "Spaced repetition so nothing fades from memory." },
   { icon: Gauge, title: "Rank forecast dashboard", desc: "See your projected rank — and the path to improve it." },
@@ -17,26 +17,26 @@ const SmartLearning = () => (
     <div className="container">
       <SectionHead
         eyebrow="Smart Learning OS"
-        title={<>An <span className="text-gradient-brand">AI-grade</span> layer over your prep</>}
-        subtitle="Beautiful dashboards. Real signals. Zero noise."
+        title={<>An <span className="text-gradient-brand">AI-grade</span> learning layer is coming soon</>}
+        subtitle="A premium performance dashboard is in development for smarter planning, sharper revision and clearer rank direction."
       />
 
       <div className="mt-14 grid lg:grid-cols-12 gap-5">
         {/* Big featured panel */}
         <motion.div
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-          className="lg:col-span-7 glass-strong ring-grad rounded-3xl p-6 md:p-8 relative overflow-hidden"
+          className="lg:col-span-7 premium-panel ring-grad rounded-3xl p-6 md:p-8 relative overflow-hidden"
         >
-          <div aria-hidden className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-primary/20 blur-3xl" />
-          <div className="text-xs uppercase tracking-widest text-muted-foreground">Today&apos;s plan</div>
-          <h3 className="font-display text-2xl md:text-3xl font-bold mt-2">Your rank, modeled in real-time.</h3>
-          <p className="text-muted-foreground mt-2 max-w-xl">Every test, every revision, every minute — turned into a forecast you can actually trust.</p>
+          <div aria-hidden className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-primary/14 blur-2xl" />
+          <div className="text-xs uppercase tracking-widest text-muted-foreground">Coming soon</div>
+          <h3 className="font-display text-2xl md:text-3xl font-bold mt-2">Your future command center for exam prep.</h3>
+          <p className="text-muted-foreground mt-2 max-w-xl">We are building a smarter layer that turns study hours, tests and revision patterns into simple actions you can follow.</p>
 
           <div className="grid grid-cols-3 gap-3 mt-6">
             {[
               { k: "Hours", v: "4.2h", sub: "deep work" },
               { k: "Accuracy", v: "78%", sub: "this week" },
-              { k: "Forecast", v: "AIR 318", sub: "↑ 24" },
+              { k: "Launch", v: "Soon", sub: "beta access" },
             ].map((m) => (
               <div key={m.k} className="rounded-2xl bg-white/5 border border-white/5 p-4">
                 <div className="text-xs text-muted-foreground">{m.k}</div>
@@ -48,8 +48,8 @@ const SmartLearning = () => (
 
           <div className="mt-6 rounded-2xl bg-white/5 border border-white/5 p-5">
             <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
-              <span>Weekly trajectory</span>
-              <span>Mon — Sun</span>
+              <span>Preview trajectory</span>
+              <span>Beta design</span>
             </div>
             <div className="flex items-end gap-2 h-28">
               {[35,52,46,68,72,58,82].map((h,i)=>(
@@ -72,13 +72,13 @@ const SmartLearning = () => (
               initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i*0.05 }}
               whileHover={{ y: -4 }}
-              className="glass rounded-2xl p-5 hover:bg-white/[0.07]"
+              className="premium-panel rounded-2xl p-5 hover:bg-white/[0.07]"
             >
               <div className="w-9 h-9 rounded-xl bg-gradient-primary grid place-items-center mb-3">
                 <f.icon className="w-4 h-4 text-white" />
               </div>
               <div className="font-semibold">{f.title}</div>
-              <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed" dangerouslySetInnerHTML={{ __html: f.desc.replace("&apos;","'") }} />
+              <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed">{f.desc}</p>
             </motion.div>
           ))}
         </div>

@@ -3,7 +3,7 @@ import { GraduationCap, FlaskConical, BookOpenCheck, Users, MessagesSquare, Trop
 import { SectionHead } from "./CoursesSection";
 
 const items = [
-  { icon: GraduationCap, title: "Expert mentors", desc: "Mentors from IITs, IIMs and top services who&apos;ve been there." },
+  { icon: GraduationCap, title: "Expert mentors", desc: "Mentors from IITs, IIMs and top services who've been there." },
   { icon: FlaskConical, title: "Smart test series", desc: "Adaptive tests that target your exact weak topics." },
   { icon: BookOpenCheck, title: "Updated material", desc: "Notes refreshed to the latest pattern and current affairs." },
   { icon: Users, title: "Personal guidance", desc: "1:1 strategy calls and study plans tailored to you." },
@@ -32,13 +32,13 @@ const WhyUs = () => (
             viewport={{ once: true }}
             transition={{ duration: 0.55, delay: (i % 4) * 0.05 }}
             whileHover={{ y: -4 }}
-            className="glass rounded-3xl p-6 hover:bg-white/[0.07] transition-colors"
+            className="premium-panel rounded-3xl p-6 hover:bg-white/[0.07] transition-colors"
           >
             <div className="w-10 h-10 rounded-xl bg-gradient-violet grid place-items-center mb-5">
               <it.icon className="w-5 h-5 text-white" />
             </div>
             <div className="font-display text-lg font-bold">{it.title}</div>
-            <p className="mt-2 text-sm text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: it.desc.replace("&apos;", "'") }} />
+            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{it.desc}</p>
           </motion.div>
         ))}
       </div>

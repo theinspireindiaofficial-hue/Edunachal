@@ -30,7 +30,7 @@ const Resources = () => (
             viewport={{ once: true }}
             transition={{ duration: 0.55, delay: (i%3)*0.06 }}
             whileHover={{ y: -4 }}
-            className="group glass rounded-3xl p-6 flex items-start gap-4 hover:bg-white/[0.07]"
+            className="group premium-panel rounded-3xl p-6 flex items-start gap-4 hover:bg-white/[0.07]"
           >
             <div className="w-12 h-12 rounded-2xl bg-gradient-violet grid place-items-center shrink-0">
               <r.icon className="w-5 h-5 text-white" />

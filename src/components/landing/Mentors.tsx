@@ -4,20 +4,22 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { SectionHead } from "./CoursesSection";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
-import aaravImage from "@/assets/mentors/mentor-aarav.svg";
-import kavyaImage from "@/assets/mentors/mentor-kavya.svg";
-import rohanImage from "@/assets/mentors/mentor-rohan.svg";
-import riyaImage from "@/assets/mentors/mentor-riya.svg";
+import vikasImage from "@/assets/mentors/Vikas-Giri.png";
+import sandeepImage from "@/assets/mentors/Sandeep-Patel.jpg";
+import soniaImage from "@/assets/mentors/Sonia-nain.jpg";
+import raviImage from "@/assets/mentors/Ravi-pathak.jpg";
+import anshikaImage from "@/assets/mentors/Anshika-dhiman.jpg";
+import ronitImage from "@/assets/mentors/Ronit-kumar-singh.jpg";
+import litsaImage from "@/assets/mentors/Litsa-shekhar.jpg";
 
 const mentors = [
-  { name: "Dr. Aarav Mehta", role: "UPSC GS Faculty", exp: "12+ yrs", subj: "Polity & Governance", image: aaravImage },
-  { name: "Prof. Kavya Iyer", role: "JEE Mathematics", exp: "10+ yrs", subj: "Calculus & Algebra", image: kavyaImage },
-  { name: "Dr. Rohan Bhatt", role: "NEET Biology", exp: "9+ yrs", subj: "Botany & Genetics", image: rohanImage },
-  { name: "Ms. Riya Kapoor", role: "Banking & SSC", exp: "8+ yrs", subj: "Quant & Reasoning", image: riyaImage },
-  { name: "Prof. Neel Dutta", role: "Current Affairs", exp: "11+ yrs", subj: "Essay & Analysis", image: aaravImage },
-  { name: "Dr. Meera Sen", role: "NEET Chemistry", exp: "9+ yrs", subj: "Organic Chemistry", image: kavyaImage },
-  { name: "Mr. Arjun Rao", role: "SSC & Banking", exp: "10+ yrs", subj: "Reasoning Mastery", image: rohanImage },
-  { name: "Prof. Tara Singh", role: "APSC Mentor", exp: "8+ yrs", subj: "State GS & Interview", image: riyaImage },
+  { name: "Mr. Vikas Giri", role: "UPSC GS Faculty", exp: "12+ yrs", subj: "History & International Relations", image: vikasImage },
+  { name: "Mr. Sandeep Patel", role: "JEE Physics Expert", exp: "10+ yrs", subj: "Mechanics & Modern Physics", image: sandeepImage },
+  { name: "Ms. Sonia Nain", role: "NEET Biology", exp: "9+ yrs", subj: "Zoology & Genetics", image: soniaImage },
+  { name: "Mr. Ravi Pathak", role: "Quantitative Aptitude", exp: "8+ yrs", subj: "SSC & Banking Math", image: raviImage },
+  { name: "Ms. Anshika Dhiman", role: "English & Verbal", exp: "7+ yrs", subj: "Communication & Grammar", image: anshikaImage },
+  { name: "Mr. Ronit Kumar Singh", role: "Reasoning Expert", exp: "6+ yrs", subj: "Logical & Analytical Reasoning", image: ronitImage },
+  { name: "Ms. Litsa Shekhar", role: "General Awareness", exp: "8+ yrs", subj: "Current Affairs & Economy", image: litsaImage },
 ];
 
 const Mentors = () => {

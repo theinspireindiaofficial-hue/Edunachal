@@ -30,6 +30,7 @@ const cols = [
       { name: "Mentors", path: "/#mentors" },
       { name: "Careers", path: "/careers" },
       { name: "Resources", path: "/resources" },
+      { name: "Practice Lab", path: "/practice-lab" },
       { name: "Exam Alerts", path: "/exam-notifications" }
     ] 
   },

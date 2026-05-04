@@ -13,6 +13,8 @@ import TermsConditions from "./pages/TermsConditions.tsx";
 import Contact from "./pages/Contact.tsx";
 import Resources from "./pages/Resources.tsx";
 import ExamNotifications from "./pages/ExamNotifications.tsx";
+import PracticeLab from "./pages/PracticeLab.tsx";
+import MockTest from "./pages/MockTest.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -34,6 +36,8 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/exam-notifications" element={<ExamNotifications />} />
+          <Route path="/practice-lab" element={<PracticeLab />} />
+          <Route path="/free-mock-test" element={<MockTest />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

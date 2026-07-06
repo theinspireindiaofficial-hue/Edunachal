@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const examOptions = ["UPSC CSE", "APSC", "SSC", "Banking", "NEET UG", "IIT-JEE", "Railways", "Other"];
 const timeOptions = ["Morning", "Afternoon", "Evening", "Any time"];
@@ -15,6 +16,8 @@ const BookCall = () => {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const [exam, setExam] = useState("");
+  const [time, setTime] = useState("");
 
   return (
     <Layout
@@ -79,12 +82,20 @@ const BookCall = () => {
                     onSubmit={async (event) => {
                       event.preventDefault();
                       setError("");
+
+                      if (!exam || !time) {
+                        setError("Please select your target exam and preferred call time.");
+                        return;
+                      }
+
                       setIsSubmitting(true);
 
                       const formData = new FormData(event.currentTarget);
                       formData.append("access_key", WEB3FORMS_ACCESS_KEY);
                       formData.append("subject", "New Edunachal strategy call booking");
                       formData.append("from_name", "Edunachal Website");
+                      formData.append("exam", exam);
+                      formData.append("time", time);
 
                       try {
                         const response = await fetch("https://api.web3forms.com/submit", {
@@ -125,27 +136,31 @@ const BookCall = () => {
                         <Input id="email" name="email" type="email" placeholder="you@example.com" className="h-12 rounded-2xl border-white/10 bg-white/5" />
                       </Field>
                       <Field label="Target exam" htmlFor="exam">
-                        <select id="exam" name="exam" required className="h-12 w-full rounded-2xl border border-white/10 bg-white/5 px-4 text-sm text-foreground outline-none focus:ring-2 focus:ring-primary">
-                          <option value="">Select exam</option>
-                          {examOptions.map((exam) => (
-                            <option key={exam} value={exam} className="bg-slate-950">
-                              {exam}
-                            </option>
-                          ))}
-                        </select>
+                        <Select value={exam} onValueChange={setExam}>
+                          <SelectTrigger id="exam" className="h-12 rounded-2xl border-white/10 bg-white/5 text-sm transition hover:bg-white/10 focus:ring-2 focus:ring-primary/60 focus:ring-offset-0 data-[placeholder]:text-muted-foreground">
+                            <SelectValue placeholder="Select exam" />
+                          </SelectTrigger>
+                          <SelectContent className="rounded-2xl border-white/10 bg-surface-2/95 backdrop-blur-xl shadow-soft">
+                            {examOptions.map((o) => (
+                              <SelectItem key={o} value={o} className="rounded-lg py-2 cursor-pointer text-subtle-foreground focus:bg-primary/20 focus:text-white data-[state=checked]:bg-primary/25 data-[state=checked]:text-white">{o}</SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
                       </Field>
                     </div>
 
                     <div className="grid gap-4 md:grid-cols-2">
                       <Field label="Preferred call time" htmlFor="time">
-                        <select id="time" name="time" required className="h-12 w-full rounded-2xl border border-white/10 bg-white/5 px-4 text-sm text-foreground outline-none focus:ring-2 focus:ring-primary">
-                          <option value="">Select time</option>
-                          {timeOptions.map((time) => (
-                            <option key={time} value={time} className="bg-slate-950">
-                              {time}
-                            </option>
-                          ))}
-                        </select>
+                        <Select value={time} onValueChange={setTime}>
+                          <SelectTrigger id="time" className="h-12 rounded-2xl border-white/10 bg-white/5 text-sm transition hover:bg-white/10 focus:ring-2 focus:ring-primary/60 focus:ring-offset-0 data-[placeholder]:text-muted-foreground">
+                            <SelectValue placeholder="Select time" />
+                          </SelectTrigger>
+                          <SelectContent className="rounded-2xl border-white/10 bg-surface-2/95 backdrop-blur-xl shadow-soft">
+                            {timeOptions.map((o) => (
+                              <SelectItem key={o} value={o} className="rounded-lg py-2 cursor-pointer text-subtle-foreground focus:bg-primary/20 focus:text-white data-[state=checked]:bg-primary/25 data-[state=checked]:text-white">{o}</SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
                       </Field>
                       <Field label="Current stage" htmlFor="stage">
                         <Input id="stage" name="stage" placeholder="Beginner / repeat attempt / advanced" className="h-12 rounded-2xl border-white/10 bg-white/5" />

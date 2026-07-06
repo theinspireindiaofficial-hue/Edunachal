@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Flag } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoMark from "@/assets/edunachal-mark.png";
+import logoMark from "@/assets/edunachal-coin.png";
 
 const links = [
   { label: "Home", href: "/#home" },
@@ -14,6 +14,17 @@ const links = [
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
+
+const EduBharatLink = ({ onClick }: { onClick?: () => void }) => (
+  <Link
+    to="/edubharat"
+    onClick={onClick}
+    className="flex items-center gap-1.5 px-3.5 py-2 rounded-full text-sm font-medium text-white bg-gradient-to-r from-[#F47216] to-[#1B3A9E] shadow-[0_8px_24px_-10px_rgba(244,114,22,0.7)] hover:opacity-95 transition"
+  >
+    <Flag className="w-3.5 h-3.5" />
+    EduBharat
+  </Link>
+);
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -42,32 +53,36 @@ const Navbar = () => {
           }`}
         >
           <Link to="/" className="flex items-center gap-2.5 font-display font-bold text-lg">
-            <span className="relative grid place-items-center w-9 h-9 rounded-xl">
-              <span aria-hidden className="absolute inset-0 rounded-xl bg-gradient-primary opacity-40 blur-md" />
-              <img src={logoMark} alt="Edunachal" className="relative w-9 h-9 object-contain drop-shadow-[0_0_12px_hsl(262_83%_58%/0.6)]" />
-            </span>
+            <img src={logoMark} alt="Edunachal" className="w-9 h-9 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.3)]" />
             <span className="tracking-tight">Edunachal</span>
           </Link>
 
           <ul className="hidden lg:flex items-center gap-1">
             {links.map((link) => (
-              <li key={link.href}>
-                {(link.href.startsWith("/") && !link.href.includes("#")) ? (
-                  <Link
-                    to={link.href}
-                    className="px-4 py-2 rounded-full text-sm text-muted-foreground hover:text-foreground hover:bg-white/5 transition"
-                  >
-                    {link.label}
-                  </Link>
-                ) : (
-                  <a
-                    href={link.href}
-                    className="px-4 py-2 rounded-full text-sm text-muted-foreground hover:text-foreground hover:bg-white/5 transition"
-                  >
-                    {link.label}
-                  </a>
+              <Fragment key={link.href}>
+                <li>
+                  {(link.href.startsWith("/") && !link.href.includes("#")) ? (
+                    <Link
+                      to={link.href}
+                      className="px-4 py-2 rounded-full text-sm text-muted-foreground hover:text-foreground hover:bg-white/5 transition"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="px-4 py-2 rounded-full text-sm text-muted-foreground hover:text-foreground hover:bg-white/5 transition"
+                    >
+                      {link.label}
+                    </a>
+                  )}
+                </li>
+                {link.label === "Home" && (
+                  <li>
+                    <EduBharatLink />
+                  </li>
                 )}
-              </li>
+              </Fragment>
             ))}
           </ul>
 
@@ -96,25 +111,32 @@ const Navbar = () => {
             >
               <ul className="flex flex-col">
                 {links.map((l) => (
-                  <li key={l.href}>
-                    {(l.href.startsWith("/") && !l.href.includes("#")) ? (
-                      <Link
-                        to={l.href}
-                        onClick={() => setOpen(false)}
-                        className="block px-4 py-3 text-base text-subtle-foreground hover:bg-white/5 rounded-xl"
-                      >
-                        {l.label}
-                      </Link>
-                    ) : (
-                      <a
-                        href={l.href}
-                        onClick={() => setOpen(false)}
-                        className="block px-4 py-3 text-base text-subtle-foreground hover:bg-white/5 rounded-xl"
-                      >
-                        {l.label}
-                      </a>
+                  <Fragment key={l.href}>
+                    <li>
+                      {(l.href.startsWith("/") && !l.href.includes("#")) ? (
+                        <Link
+                          to={l.href}
+                          onClick={() => setOpen(false)}
+                          className="block px-4 py-3 text-base text-subtle-foreground hover:bg-white/5 rounded-xl"
+                        >
+                          {l.label}
+                        </Link>
+                      ) : (
+                        <a
+                          href={l.href}
+                          onClick={() => setOpen(false)}
+                          className="block px-4 py-3 text-base text-subtle-foreground hover:bg-white/5 rounded-xl"
+                        >
+                          {l.label}
+                        </a>
+                      )}
+                    </li>
+                    {l.label === "Home" && (
+                      <li className="my-1">
+                        <EduBharatLink onClick={() => setOpen(false)} />
+                      </li>
                     )}
-                  </li>
+                  </Fragment>
                 ))}
                 <li className="mt-2">
                   <Button asChild className="btn-glow w-full rounded-full text-white border-0">

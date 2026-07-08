@@ -15,8 +15,8 @@ const BLUE_DEEP = "#12307E";
 const ORANGE = "#F47216";
 
 const STORAGE_KEY = "edubharat_registrations";
-/* web3forms key registered to edunachalofficial@gmail.com (same as Book-a-Call) */
-const WEB3FORMS_ACCESS_KEY = "18be8970-4402-4f04-b809-5a2b01d8e217";
+/* dedicated EduBharat web3forms key (registered to edunachalofficial@gmail.com) */
+const WEB3FORMS_ACCESS_KEY = "12e1bf14-dda0-4096-9e1e-89a89cacc097";
 
 type Registration = {
   id: string;

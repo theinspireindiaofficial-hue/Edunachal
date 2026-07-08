@@ -21,6 +21,7 @@ import {
   Globe,
 } from "lucide-react";
 import mark from "@/assets/edubharat-emblem.png";
+import MentorshipCTA from "@/components/landing/MentorshipCTA";
 
 /* ------------------------------------------------------------------ *
  * EduBharat — a self-contained landing page (light theme).
@@ -39,6 +40,7 @@ const navLinks = [
   { label: "Why Us", href: "#why-us" },
   { label: "Exams", href: "#exams" },
   { label: "Features", href: "#features" },
+  { label: "Mentorship", href: "#mentorship" },
   { label: "Community", href: "#community" },
 ];
 
@@ -279,6 +281,9 @@ const EduBharat = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* ---------------- One-to-One Mentorship (WhatsApp) — top highlight ---------------- */}
+      <MentorshipCTA />
 
       {/* ---------------- About ---------------- */}
       <section id="about" className="bg-white py-24">

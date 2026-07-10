@@ -1,0 +1,55 @@
+{
+  "_readme": "Add quizzes here, then run:  npm run import:quizzes  — that's it. Copy a block below, change the words. 'answer' is the LETTER of the correct option (A = first option, B = second, ...). Tip: options are shuffled for each student, so answer position never matters — just mark the truly correct one. Topics are created automatically if they don't exist yet.",
+
+  "quizzes": [
+    {
+      "topic": "Polity",
+      "title": "Directive Principles",
+      "description": "DPSP: Articles 36-51 and their significance.",
+      "difficulty": "Medium",
+      "durationMinutes": 10,
+      "questions": [
+        {
+          "question": "Which part of the Constitution contains the Directive Principles of State Policy?",
+          "options": ["Part IV", "Part III", "Part IVA", "Part V"],
+          "answer": "A",
+          "explanation": "DPSP are contained in Part IV (Articles 36-51) of the Constitution."
+        },
+        {
+          "question": "Directive Principles of State Policy are:",
+          "options": ["Justiciable", "Fundamental in nature", "Non-justiciable", "Enforceable by courts"],
+          "answer": "C",
+          "explanation": "Unlike Fundamental Rights, DPSP are non-justiciable — not enforceable by courts."
+        },
+        {
+          "question": "The concept of DPSP was borrowed from the constitution of:",
+          "options": ["USA", "Britain", "Ireland", "Canada"],
+          "answer": "C",
+          "explanation": "The idea of Directive Principles was borrowed from the Irish Constitution."
+        }
+      ]
+    },
+
+    {
+      "topic": "Geography",
+      "title": "Mountains of India",
+      "description": "Major ranges and peaks across India.",
+      "difficulty": "Easy",
+      "durationMinutes": 8,
+      "questions": [
+        {
+          "question": "Which is the highest mountain peak in India?",
+          "options": ["Nanda Devi", "Kamet", "K2 (Godwin Austen)", "Kanchenjunga"],
+          "answer": "C",
+          "explanation": "K2 (Godwin Austen), in the Karakoram range, is the highest peak in India at 8,611 m."
+        },
+        {
+          "question": "The Western Ghats are also known as the:",
+          "options": ["Sahyadri", "Aravalli", "Vindhya", "Nilgiri"],
+          "answer": "A",
+          "explanation": "The Western Ghats are traditionally called the Sahyadri range."
+        }
+      ]
+    }
+  ]
+}

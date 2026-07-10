@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import Hero from "@/components/landing/Hero";
+import QuizSection from "@/components/landing/QuizSection";
 import SocialProof from "@/components/landing/SocialProof";
 import CoursesSection from "@/components/landing/CoursesSection";
 import WhyUs from "@/components/landing/WhyUs";
@@ -15,6 +16,7 @@ const Index = () => {
       description="Premium EdTech for UPSC, State PCS, SSC, Banking, NEET & JEE. Mentorship, smart test series and an AI-grade analytics layer built for top ranks."
     >
       <Hero />
+      <QuizSection />
       <SocialProof />
       <CoursesSection />
       <WhyUs />

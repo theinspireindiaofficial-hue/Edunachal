@@ -33,6 +33,7 @@ const cols = [
       { name: "Careers", path: "/careers" },
       { name: "Resources", path: "/resources" },
       { name: "Practice Lab", path: "/practice-lab" },
+      { name: "Practice Tests", path: "/tests" },
       { name: "Exam Alerts", path: "/exam-notifications" }
     ]
   },
@@ -135,7 +136,10 @@ const Footer = () => {
 
         <div className="mt-14 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <div className="text-xs text-muted-foreground">© {new Date().getFullYear()} Edunachal. All rights reserved.</div>
-          <div className="text-xs text-muted-foreground">Crafted with intent in India.</div>
+          <div className="flex items-center gap-4">
+            <Link to="/admin/upload" className="text-xs text-muted-foreground/70 hover:text-foreground transition">Admin</Link>
+            <span className="text-xs text-muted-foreground">Crafted with intent in India.</span>
+          </div>
         </div>
       </div>
     </footer>

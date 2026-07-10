@@ -15,6 +15,9 @@ import Resources from "./pages/Resources.tsx";
 import ExamNotifications from "./pages/ExamNotifications.tsx";
 import PracticeLab from "./pages/PracticeLab.tsx";
 import MockTest from "./pages/MockTest.tsx";
+import Tests from "./pages/Tests.tsx";
+import QuizAttempt from "./pages/QuizAttempt.tsx";
+import AdminUpload from "./pages/AdminUpload.tsx";
 import EduBharat from "./pages/EduBharat.tsx";
 import EduBharatEnroll from "./pages/EduBharatEnroll.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -42,6 +45,9 @@ const App = () => (
           <Route path="/free-mock-test" element={<MockTest />} />
           <Route path="/edubharat" element={<EduBharat />} />
           <Route path="/edubharat/enroll" element={<EduBharatEnroll />} />
+          <Route path="/tests" element={<Tests />} />
+          <Route path="/tests/:quizId" element={<QuizAttempt />} />
+          <Route path="/admin/upload" element={<AdminUpload />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
